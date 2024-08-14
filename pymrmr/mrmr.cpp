@@ -175,7 +175,7 @@ double calMutualInfo (std::vector< std::vector<int> > data, unsigned long v1,
   int *v2data = new int[data.size()];
   if (!v1data || !v2data)
     throw std::runtime_error("Line " S__LINE__ "Fail to allocate memory");
-  #pragma omp parallel num_threads(4)
+  #pragma omp parallel num_threads(32)
   #pragma omp parallel for
   for (unsigned long i = 0; i < data.size(); i++) {
       v1data[i] = data[i][v1];
